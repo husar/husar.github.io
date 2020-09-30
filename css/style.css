@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 header {
     background-image: url(../imgs/header.png);
     background-size: cover;
@@ -93,6 +95,11 @@ body {
 
 /* navbar */
 
+nav.navbar img{
+    height: 80px;
+    width: 200px;
+}
+
 nav.navbar {
     position: relative;
     top: 0;
@@ -100,7 +107,7 @@ nav.navbar {
     width: 100%;
     z-index: 1000;
     font-family: 'Roboto', sans-serif;
-    background: #0c2326;
+    background: #293132;
     min-height: 95px;
 }
 
@@ -111,6 +118,7 @@ nav.navbar a, nav.navbar ul li a {
 nav.navbar ul li {
     padding: 0 15px;
     position: relative;
+    font-weight: bold;
 }
 
 nav.navbar .search-container {
@@ -1238,5 +1246,12 @@ p {
 
 
 
+
+
+
+.d-block {
+    height: auto;
+    width: auto;
+}
 
 
