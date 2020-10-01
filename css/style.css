@@ -96,30 +96,45 @@ body {
 /* navbar */
 
 nav.navbar img{
-    height: 80px;
-    width: 200px;
+    height: 170px;
+    width: 210px;
+    margin-left: -50px;
 }
 
 nav.navbar {
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+/*    z-index: 1000;*/
     font-family: 'Roboto', sans-serif;
     background: #293132;
-    min-height: 95px;
+    height: 80px;
+    z-index: 9999;
 }
 
-nav.navbar a, nav.navbar ul li a {
-    color: #FFF !important;
+nav.navbar a, nav.navbar ul li a:link,
+nav.navbar a, nav.navbar ul li a:visited{
+    color: #daa520 !important;
+    font-weight: bold;
+    font: 20px Arial, sans-serif;
+    margin-right: 10px;
 }
 
 nav.navbar ul li {
-    padding: 0 15px;
+    margin-right: -110px;
+    padding: 0 60px;
     position: relative;
     font-weight: bold;
 }
+
+nav.navbar a, nav.navbar ul li a:hover,
+nav.navbar a, nav.navbar ul li a:active{
+    font-size: 25px;   
+    color: #f5d000 !important;
+}
+
+
 
 nav.navbar .search-container {
     position: relative;
@@ -240,6 +255,14 @@ p {
     transition: ease all 0.5s;
 }
 
+.js--wp-1 {
+    opacity: 0;
+}
+
+.js--wp-1.animated {
+    opacity: 1;
+}
+
 /* header */
 
 header {
@@ -249,7 +272,7 @@ header {
 }
 
 header .container {
-    height: 100%
+    height: 100%;
 }
 
 header .container > div {
@@ -554,7 +577,7 @@ h3.blog_head {
     position: absolute;
     width: 60%;
     margin: 0 15%;
-    z-index: 1111111111;
+    z-index: 9998;
     top: 135px;
     left: 0;
     padding: 50px 60px 70px;
@@ -787,9 +810,13 @@ footer .copyright p {
     } 
     
     /* navbar */
+    .navbar{
+        z-index: 9999;
+        margin-bottom: 5px;
+    }
     
     .navbar ul {
-        background-color: #4fcaff;
+        background-color: #293132;
     }
     .navbar ul li {
         margin: 10px 0;
@@ -1007,8 +1034,10 @@ footer .item h4 {
 
 .navbar-light .navbar-toggler {
     color: #000;
-    background: #4fcaff;
+    background: #daa520;
     width: 50px;
+    margin-right: -10px;
+    margin-top: -50px;
     padding: 0;
     height: 45px;
     border: none;
@@ -1016,16 +1045,44 @@ footer .item h4 {
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
+nav.navbar img{
+        margin-left: -40px;
+    height: 140%;
+    width: 140%;
+}   
+    
+nav.navbar a, nav.navbar ul li a:link,
+nav.navbar a, nav.navbar ul li a:visited{
+    color: #daa520 !important;
+    font-weight: bold;
+    font: 18px Arial, sans-serif;
+    margin-right: 15px;
+}
+    
+nav.navbar a, nav.navbar ul li a:hover,
+nav.navbar a, nav.navbar ul li a:active{
+    font-size: 22px;   
+    color: #f5d000 !important;
+}
+
+    
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-
+    
+nav.navbar img{
+    margin-left: 0px;
+    margin-top: -50px;
+    height: 150px;
+    width: 150px;
+}  
+    
 .ovarlay_slide_cont {
     background: rgba(5,3,0,0.63);
     position: absolute;
     width: 70%;
-    margin: 0 15%;
-    z-index: 1111111111;
+    margin: 10% 15%;
+    z-index: 9998;
     top: 0;
     left: 0;
     padding: 50px 60px 70px;
@@ -1117,6 +1174,13 @@ h3.blog_head {
 
 @media (max-width: 767px) {
 
+nav.navbar img{
+        margin-left: 0px;
+    margin-top: -50px;
+    height: 150px;
+    width: 150px;
+    }
+    
 .layout_padding {
     padding: 50px 0;
 }

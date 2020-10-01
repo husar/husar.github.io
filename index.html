@@ -7,20 +7,21 @@
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/fontawesome.min.css">
+      <link rel="stylesheet" href="css/animate.css">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
    </head>
    <body>
       <div id="header" class="header">
-         <nav class="navbar navbar-expand-lg navbar-light text-capitalize">
+         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-               <a class="navbar-brand" href="#"><img src="imgs/logo.png" alt="#" /></a>
+               <a class="navbar-brand"><img src="imgs/logo.png" alt="#" /></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#show-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="show-menu">
                   <ul class="navbar-nav ml-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="#about">O nás</a>
+                        <a class="nav-link" href="#about">Kapela</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#hiw">Členovia</a>
@@ -65,7 +66,7 @@
                      <h2>Hudba je liek</h2>
                      <h4>Niečo málo o nás - krátke privítanie</h4>
                      <p> ( FOTO celej kapely v akciii alebo tak, potrebujeme riadne kvalitné, originálne foto, takže táto fotka tam isto nebude)</p>
-                     <a class="blue_bt" href="#hiw">Členovia</a>
+                     <a class="blue_bt js--scroll-to-about-us" href="#">Viac o nás</a>
                   </div>
                </div>
                <div class="carousel-item">
@@ -74,7 +75,7 @@
                      <h2>Naše novinky</h2>
                      <h4>Vydali sme nové single</h4>
                      <p>Tota heľpa a atd. ku kazdemu singlu nieco malo napisat. (Tu by boli stale novinky, ktore sme vydali foto zo studia?)</p>
-                     <a class="blue_bt" href="#ukazky">Ukážky</a>
+                     <a class="blue_bt js--scroll-to-playlist" href="#ukazky">Ukážky</a>
                   </div>
                </div>
                <div class="carousel-item">
@@ -83,7 +84,7 @@
                      <h2>Posledné akcie</h2>
                      <h4>foto a text z poslednej akcii kde sme hrali</h4>
                      <p>Foto ktore pridavame na fb kazdu akciu s tym istym textom. (Stale by tu bola najnovsia akcia)</p>
-                     <a class="blue_bt" href="#service">Posledné akcie</a>
+                     <a class="blue_bt js--scroll-to-last-events" href="#service">Posledné akcie</a>
                   </div>
                </div>
             </div>
@@ -95,23 +96,25 @@
             </a>
          </div>
       </div>
-      <div id="about" class="about_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-5">
-                  <h4>O nás</h4>
-                  <h3 style="text-transform: none !important">Kvalitná aktuálna foto+ nejaký dlhší lepší popis kapely</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-               </div>
-               <div class="col-md-6 offset-md-1">
-                  <div class="full text_align_center">
-                     <img class="img-responsive" src="imgs/about.png" alt="#" />
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div id="hiw" class="hiw_section layout_padding" style="background: #1a2428;">
+      <section class="about_us js--section-about-us">
+          <div id="about" class="about_section layout_padding">
+             <div class="container">
+                <div class="row">
+                   <div class="col-md-5">
+                      <h4>O nás</h4>
+                      <h3 style="text-transform: none !important">Kvalitná aktuálna foto+ nejaký dlhší lepší popis kapely</h3>
+                      <p class="js--wp-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                   </div>
+                   <div class="col-md-6 offset-md-1">
+                      <div class="full text_align_center">
+                         <img class="img-responsive js--wp-1" src="imgs/about.png" alt="#" />
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+      </section>
+      <div id="hiw" class="hiw_section layout_padding " style="background: #1a2428;">
          <div class="container">
             <div class="row">
                <div class="col-md-7">
@@ -141,40 +144,42 @@
             </div>
          </div>
       </div>
-      <div id="service" class="hiw_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-7">
-                  <h3>Foto + popis z posledných akcií (Niečo ako fotogaléria, po rozkliknutí sa otvorí veľká fotka)</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-               </div>
-               <div class="col-md-5">
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-8 service_blog">
-                  <img class="margin_top_30 img-responsive" src="imgs/s1.jpg" alt="#" />
-                  <h3 class="blog_head">Book Online</h3>
-               </div>
-               <div class="col-md-4 service_blog">
-                  <img class="margin_top_30 img-responsive" src="imgs/s2.jpg" alt="#" />
-                  <h3 class="blog_head">Confirmation</h3>
-               </div>
-               <div class="col-md-4 service_blog">
-                  <img class="margin_top_30 img-responsive" src="imgs/s3.jpg" alt="#" />
-                  <h3 class="blog_head">Work Status</h3>
-               </div>
-               <div class="col-md-4 service_blog">
-                  <img class="margin_top_30 img-responsive" src="imgs/s4.jpg" alt="#" />
-                  <h3 class="blog_head">Work Status</h3>
-               </div>
-               <div class="col-md-4 service_blog">
-                  <img class="margin_top_30 img-responsive" src="imgs/s5.jpg" alt="#" />
-                  <h3 class="blog_head">Work Status</h3>
-               </div>
-            </div>
-         </div>
-      </div>
+      <section class="last-events js--section-last-events">
+          <div id="service" class="hiw_section layout_padding">
+             <div class="container">
+                <div class="row">
+                   <div class="col-md-7">
+                      <h3>Foto + popis z posledných akcií (Niečo ako fotogaléria, po rozkliknutí sa otvorí veľká fotka)</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                   </div>
+                   <div class="col-md-5">
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-8 service_blog">
+                      <img class="margin_top_30 img-responsive" src="imgs/s1.jpg" alt="#" />
+                      <h3 class="blog_head">Book Online</h3>
+                   </div>
+                   <div class="col-md-4 service_blog">
+                      <img class="margin_top_30 img-responsive" src="imgs/s2.jpg" alt="#" />
+                      <h3 class="blog_head">Confirmation</h3>
+                   </div>
+                   <div class="col-md-4 service_blog">
+                      <img class="margin_top_30 img-responsive" src="imgs/s3.jpg" alt="#" />
+                      <h3 class="blog_head">Work Status</h3>
+                   </div>
+                   <div class="col-md-4 service_blog">
+                      <img class="margin_top_30 img-responsive" src="imgs/s4.jpg" alt="#" />
+                      <h3 class="blog_head">Work Status</h3>
+                   </div>
+                   <div class="col-md-4 service_blog">
+                      <img class="margin_top_30 img-responsive" src="imgs/s5.jpg" alt="#" />
+                      <h3 class="blog_head">Work Status</h3>
+                   </div>
+                </div>
+             </div>
+          </div>
+      </section>
       <div id="na" class="hiw_section layout_padding" style="background: #1a2428;">
          <div class="container">
             <div class="row">
@@ -205,28 +210,30 @@
             </div>
          </div>
       </div>
-      <div id="ukazky" class="hiw_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-7">
-                  <h3>Ukážky dajaké 2 videjká a tlačidlo s presmerovaním na youtube kanál</h3>
-                  <p>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
-               </div>
-               <div class="col-md-5">
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-6">
-                  <img class="margin_top_30 img-responsive" src="imgs/blog1.jpg" alt="#" />
-                  <h3>Book Online</h3>
-               </div>
-               <div class="col-md-6">
-                  <img class="margin_top_30 img-responsive" src="imgs/blog2.jpg" alt="#" />
-                  <h3>Confirmation</h3>
-               </div>
-            </div>
-         </div>
-      </div>
+      <section class="playlist js--section-playlist">
+          <div id="ukazky" class="hiw_section layout_padding">
+             <div class="container">
+                <div class="row">
+                   <div class="col-md-7">
+                      <h3>Ukážky dajaké 2 videjká a tlačidlo s presmerovaním na youtube kanál</h3>
+                      <p>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                   </div>
+                   <div class="col-md-5">
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-6">
+                      <img class="margin_top_30 img-responsive" src="imgs/blog1.jpg" alt="#" />
+                      <h3>Book Online</h3>
+                   </div>
+                   <div class="col-md-6">
+                      <img class="margin_top_30 img-responsive" src="imgs/blog2.jpg" alt="#" />
+                      <h3>Confirmation</h3>
+                   </div>
+                </div>
+             </div>
+          </div>
+      </section>
       <div id="booking" class="hiw_section layout_padding" style="background: #eeefef;">
          <div class="container">
             <div class="row">
@@ -389,6 +396,8 @@
       </footer>
       <script src="js/jquery-3.3.1.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.waypoints.min.js"></script>
+      <script src="js/script.js"></script>
       <script>
          $(function () {
              
