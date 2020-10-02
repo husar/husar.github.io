@@ -812,10 +812,11 @@ footer .copyright p {
     /* navbar */
     .navbar{
         z-index: 9999;
-        margin-bottom: 5px;
+        margin-bottom: -20px;
     }
     
     .navbar ul {
+        display: block;
         background-color: #293132;
     }
     .navbar ul li {
@@ -1045,6 +1046,10 @@ footer .item h4 {
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
+.slide_show {
+    margin-top: 80px;        
+}
+    
 nav.navbar img{
         margin-left: -40px;
     height: 140%;
@@ -1069,6 +1074,10 @@ nav.navbar a, nav.navbar ul li a:active{
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    
+.slide_show {
+    margin-top: 80px;        
+}
     
 nav.navbar img{
     margin-left: 0px;
@@ -1173,6 +1182,10 @@ h3.blog_head {
 }
 
 @media (max-width: 767px) {
+    
+.slide_show {
+    margin-top: 80px;        
+}
 
 nav.navbar img{
         margin-left: 0px;
@@ -1180,6 +1193,17 @@ nav.navbar img{
     height: 150px;
     width: 150px;
     }
+    
+.navbar-light .navbar-toggler {
+    color: #000;
+    background: #daa520;
+    width: 50px;
+    margin-right: 20px;
+    margin-top: -50px;
+    padding: 0;
+    height: 45px;
+    border: none;
+}
     
 .layout_padding {
     padding: 50px 0;
