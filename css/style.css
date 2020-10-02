@@ -1084,17 +1084,19 @@ nav.navbar img{
     margin-top: -50px;
     height: 150px;
     width: 150px;
-}  
+} 
     
 .ovarlay_slide_cont {
     background: rgba(5,3,0,0.63);
     position: absolute;
     width: 70%;
+    /*height: 90%;*/
     margin: 10% 15%;
+    margin-top: 0px;
     z-index: 9998;
     top: 0;
     left: 0;
-    padding: 50px 60px 70px;
+    padding: 30px 40px 50px;
 }
 
 .ovarlay_slide_cont h2 {
