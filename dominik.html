@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>BlueSky</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/fontawesome.min.css">
+      <link rel="stylesheet" href="css/animate.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+   </head>
+   <body>
+      <div id="header" class="header">
+         <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+               <a class="navbar-brand"><img src="imgs/logo.png" alt="#" /></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#show-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="show-menu">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Kapela</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#hiw">Členovia</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#service">Posledné akcie</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#na">Najbližšie akcie</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#ukazky">Ukážky</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#booking">Rezervácia</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontakty</a>
+                     </li>
+                     <!--<li class="nav-item .search-container">
+                        <a class="nav-link search" href="#"><i class="fas fa-search"></i></a>
+                        <form>
+                           <input type="search" placeholder="Search">
+                        </form>
+                     </li>-->
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </div>
+      <section class="about_us js--section-about-us">
+          <div id="about" class="about_section layout_padding">
+             <div class="container">
+                <div class="row">
+                   <div class="col-md-5">
+                      <h3 style="text-transform: none !important">Dominik Mosorjak</h3>
+                      <p class="js--wp-1">Výška, váha, IQ toto je náš Domino - silák jak repa. Prechody dobre ovláda. Medžan atd. Je to ešte zasran a frajerku má z Jakubjan.</p>
+                   </div>
+                   <div class="col-md-6 offset-md-1">
+                      <div class="full text_align_center">
+                         <img class="img-responsive js--wp-1" src="imgs/dominik.jpg" alt="#" />
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          
+          <img id="myImg" src="imgs/jano.jpg" alt="Výška, váha, IQ toto je náš Domino - silák jak repa. Prechody dobre ovláda. Medžan atd. Je to ešte zasran a frajerku má z Jakubjan." style="width:100%;max-width:300px">
+
+
+      </section>
+        <footer>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="footer_blog_section">
+                     <img style="height: 80px; width: 200px;" src="imgs/logo.png" alt="#"/>
+                     <p style="margin-top: 5px;">It is a long established fact that a reader will be distracted by the readable content..</p>
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-6 col-12">
+                  <div class="item">
+                     <h4 class="text-uppercase">Navigation</h4>
+                     <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Location</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Features</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6 col-12">
+                  <div class="item">
+                     <h4 class="text-uppercase">Contact Info</h4>
+                     <p><strong>Corporate Office Address:</strong></p>
+                     <p><img src="imgs/phone_icon.png" alt="#" /> 1234 River Street New York, NY 36524</p>
+                     <p><strong>Customer Service:</strong></p>
+                     <p><img src="imgs/location.png" alt="#" /> 987 654 3210</p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <div class="item">
+                     <h4 class="text-uppercase">Discover</h4>
+                     <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Subscribe</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="copyright text-center">
+            <p>Copyright 2019  Design by <a href="https://html.design">Free Html Templates</a></p>
+         </div>
+      </footer>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.waypoints.min.js"></script>
+      <script src="js/script.js"></script>
+      <script>
+         $(function () {
+             
+             'use strict';
+             
+             var winH = $(window).height();
+             
+             $('header').height(winH);  
+             
+             $('header .container > div').css('top', (winH / 2) - ( $('header .container > div').height() / 2));
+             
+             $('.navbar ul li a.search').on('click', function (e) {
+                 e.preventDefault();
+             });
+             $('.navbar a.search').on('click', function () {
+                 $('.navbar form').fadeToggle();
+             });
+             
+             $('.navbar ul.navbar-nav li a').on('click', function (e) {
+                 
+                 var getAttr = $(this).attr('href');
+                 
+                 e.preventDefault();
+                 $('html').animate({scrollTop: $(getAttr).offset().top}, 1000);
+             });
+         })
+      </script>
+      <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+   </body>
+</html>
