@@ -130,37 +130,31 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3 membershover js--wp-2">
-                        <a>
-                            <img class="person margin_top_30 img-responsive" id="domino" src="imgs/dominik.jpg" alt="Výška, váha, IQ toto je náš Domino - silák jak repa. Prechody dobre ovláda. Medžan atd. Je to ešte zasran a frajerku má z Jakubjan." />
+                        <a href="#" onclick="goto('dominik')">
+                            <img class="margin_top_30 img-responsive" src="imgs/dominik.jpg" alt="Dominik Mosorjak" />
                             <h3 class="blog_head">Dominik</h3>
                             
                         </a>
                     </div>
                     <div class="col-md-3 membershover js--wp-2">
-                        <a>
-                            <img class="person margin_top_30 img-responsive" id="majo" src="imgs/majo.jpg" alt="Marian marian marian" />
+                        <a href="#" onclick="goto('majo')">
+                            <img class="margin_top_30 img-responsive" src="imgs/majo.jpg" alt="Marián Poliščák" />
                             <h3 class="blog_head">Marián</h3>
                         </a>
                     </div>
                     <div class="col-md-3 membershover js--wp-3">
-                        <a>
-                            <img class="margin_top_30 img-responsive person" id="natalia" src="imgs/natalia.jpg" alt="nasa krasna natalia najsumnejsie nam zaspiva" />
+                        <a href="#" onclick="goto('natalia')">
+                            <img class="margin_top_30 img-responsive" src="imgs/natalia.jpg" alt="Natália Rybovičová" />
                             <h3 class="blog_head">Natália</h3>
                         </a>
                     </div>
                     <div class="col-md-3 membershover js--wp-3">
-                        <a>
-                            <img class="margin_top_30 img-responsive person" id="jano" src="imgs/jano.jpg" alt="zijeme len raz prave tu a prave teraz slnko svieti rovnako na vsetkych znas ta idz do pici" />
+                        <a href="#" onclick="goto('jano')">
+                            <img class="margin_top_30 img-responsive" src="imgs/jano.jpg" alt="Ján Štucka" />
                             <h3 class="blog_head">Ján</h3>
                         </a>
                     </div>
                 </div>
-                <!-- The Modal -->
-                            <div id="myModal" class="modal">
-                              <span class="close">&times;</span>
-                              <img class="modal-content" id="img01">
-                              <div id="caption"></div>
-                            </div>
              </div>
           </div>
       </section>
@@ -445,31 +439,10 @@
              });
          })
       </script>
-      <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var x = document.getElementsByClassName("person");
-        var img;
-          if(x.id==="domino"){
-              img = document.getElementById("domino");
-          }
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.onclick = function(){
-          modal.style.display = "block";
-          modalImg.src = this.src;
-          captionText.innerHTML = this.alt;
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() { 
-          modal.style.display = "none";
-        }
-    </script>
+        <script>
+            function goto($hashtag){
+            document.location = "members.html#" + $hashtag;
+            }
+        </script>
    </body>
 </html>
