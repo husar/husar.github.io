@@ -220,36 +220,82 @@ include("connect.ini.php");
              </div>
           </div>
       </section>
+      <section class="nextEvents">
       <div id="na" class="hiw_section layout_padding" style="background: #1a2428;">
          <div class="container">
             <div class="row">
                <div class="col-md-7">
-                  <h3 class="white_font">Tu by boli 4 najbližšie akcie na ktorých hráme, a ich miesta kde by nás mohli ľudia videieť/počuť</h3>
-                  <p class="white_font">adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                  <h3 class="nextEventsh3">Najbližšie hráme</h3>
+                  <p class="white_font">Ak chceš vidieť všetky obsadené dátumy, <a href="#" onclick="goto('nextEvents.php')" style="font-weight:bold">klikaj tu</a>.</p>
                </div>
                <div class="col-md-5">
                </div>
             </div>
             <div class="row">
-               <div class="col-md-3">
-                  <img class="margin_top_30 img-responsive" src="imgs/blog1.jpg" alt="#" />
-                  <h3 class="blog_head">Book Online</h3>
-               </div>
-               <div class="col-md-3">
-                  <img class="margin_top_30 img-responsive" src="imgs/blog2.jpg" alt="#" />
-                  <h3 class="blog_head">Confirmation</h3>
-               </div>
-               <div class="col-md-3">
-                  <img class="margin_top_30 img-responsive" src="imgs/blog3.jpg" alt="#" />
-                  <h3 class="blog_head">Work Status</h3>
-               </div>
-               <div class="col-md-3">
-                  <img class="margin_top_30 img-responsive" src="imgs/blog1.jpg" alt="#" />
-                  <h3 class="blog_head">Book Online</h3>
-               </div>
+              <?php
+                    $query_zaznamy="SELECT * FROM `nextevents` WHERE CURDATE()<=dateOfEvent ORDER BY dateOfEvent";
+				    $apply_zaznamy=mysqli_query($connect,$query_zaznamy);
+                    $result_zaznamy=mysqli_fetch_array($apply_zaznamy);
+                 ?>
+               <!-- Free Tier -->
+      <div class="col-lg-3">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center"><?php echo $result_zaznamy['place']; ?></h5>
+            <h6 class="card-price text-center"><?php echo $result_zaznamy['type']; ?></h6>
+            <hr>
+            <ul class="fa-ul">
+              <li><span class="fa-li"></span><?php echo $result_zaznamy['dateOfEvent']; ?></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <?php $result_zaznamy=mysqli_fetch_array($apply_zaznamy); ?>
+      <!-- Plus Tier -->
+      <div class="col-lg-3">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center"><?php echo $result_zaznamy['place']; ?></h5>
+            <h6 class="card-price text-center"><?php echo $result_zaznamy['type']; ?></h6>
+            <hr>
+            <ul class="fa-ul">
+              <li><span class="fa-li"></span><?php echo $result_zaznamy['dateOfEvent']; ?></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <?php $result_zaznamy=mysqli_fetch_array($apply_zaznamy); ?>
+      <!-- Plus Tier -->
+      <div class="col-lg-3">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center"><?php echo $result_zaznamy['place']; ?></h5>
+            <h6 class="card-price text-center"><?php echo $result_zaznamy['type']; ?></h6>
+            <hr>
+            <ul class="fa-ul">
+              <li><span class="fa-li"></span><?php echo $result_zaznamy['dateOfEvent']; ?></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+          <?php $result_zaznamy=mysqli_fetch_array($apply_zaznamy); ?>
+      <!-- Plus Tier -->
+      <div class="col-lg-3">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center"><?php echo $result_zaznamy['place']; ?></h5>
+            <h6 class="card-price text-center"><?php echo $result_zaznamy['type']; ?></h6>
+            <hr>
+            <ul class="fa-ul">
+              <li><span class="fa-li"></span><?php echo $result_zaznamy['dateOfEvent']; ?></li>
+            </ul>
+          </div>
+        </div>
+      </div>
             </div>
          </div>
       </div>
+      </section>
       <section class="playlist js--section-playlist">
           <div id="ukazky" class="hiw_section layout_padding">
              <div class="container">
