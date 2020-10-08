@@ -1,3 +1,9 @@
+
+<?php
+include("connect.ini.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -68,76 +74,55 @@
           </div>
         </div>
       </section>
+      <?php
+                    $query_zaznamy="SELECT * FROM `lastevents` ORDER BY dateOfEvent DESC";
+				    $apply_zaznamy=mysqli_query($connect,$query_zaznamy);
+                    $even = 1;
+                   while($result_zaznamy=mysqli_fetch_array($apply_zaznamy)){
+                       if($even%2==1 && $even<11){
+                 ?>
       <section class="about_us js--section-about-us">
-          <div id="dominik" class="about_section layout_padding">
+          <div id="<?php echo $result_zaznamy['id']; ?>" class="about_section layout_padding">
              <div class="container">
                 <div class="row">
                    <div class="col-md-5">
-                      <h3 style="text-transform: none !important">Dominik Mosorjak</h3>
-                      <p class="js--wp-1">Dominik bbenik bosorjak frajerka z Jakubjan silak zasran medzan majov ziak</p>
-                      <img class="img-responsive js--wp-1" src="imgs/dominik.jpg" alt="#" />
+                      <h3 style="text-transform: none !important"><?php echo $result_zaznamy['name']; ?></h3>
+                      <h4><?php echo $result_zaznamy['dateOfEvent']; ?></h4>
+                      <p class="js--wp-1"><?php echo $result_zaznamy['info']; ?></p>
                    </div>
-                   <div class="col-md-5 offset-md-1">
-                      <div class="full ">
-                         <img class="img-responsive js--wp-1" src="imgs/dominik2.jpg" alt="#" />
-                         <p class="js--wp-1">taky nespiva furt lem ji bazmeg ta co ja znam ale ne pohodak do partii je</p>
+                   <div class="col-md-6 offset-md-1">
+                      <div class="full text_align_center">
+                        <a href="#<?php echo $result_zaznamy['id']; ?>">
+                         <img class="img-responsive js--wp-1" src="<?php echo $result_zaznamy['path']; ?>" alt="#" onclick="view('<?php echo $result_zaznamy['path']; ?>')"/>
+                        </a>
                       </div>
                    </div>
                 </div>
              </div>
           </div>
       </section>
+      <?php }elseif($even<11){?>
       <section class="about_us js--section-about-us" style="background: #1a2428">
-          <div id="majo" class="about_section layout_padding">
+          <div id="<?php echo $result_zaznamy['id']; ?>" class="about_section layout_padding">
              <div class="container">
                 <div class="row">
                    <div class="col-md-5">
                       <div class="full text_align_center">
-                         <img class="img-responsive js--wp-1" src="imgs/majo.jpg" alt="#" />
+                        <a href="#<?php echo $result_zaznamy['id']; ?>">
+                         <img class="img-responsive js--wp-1" src="<?php echo $result_zaznamy['path']; ?>" alt="#" onclick="view('<?php echo $result_zaznamy['path']; ?>')"/>
+                        </a>
                       </div>
                    </div>
                    <div class="col-md-6 offset-md-1">
-                      <h3 style="text-transform: none !important; color: #d09400;">Marián Poliščák</h3>
-                      <p class="js--wp-1" style="color: #ffffff;">Marian je z pusteho Poľa Baro frajeris 2 dzeci. Zastupca riaditeľa špivak učiteľ. Kupa zna s mixom porobic.</p>
+                      <h3 style="text-transform: none !important; color: #d09400;"><?php echo $result_zaznamy['name']; ?></h3>
+                      <h4><?php echo $result_zaznamy['dateOfEvent']; ?></h4>
+                      <p class="js--wp-1" style="color: #ffffff;"><?php echo $result_zaznamy['info']; ?></p>
                    </div>
                 </div>
              </div>
           </div>
       </section>
-      <section class="about_us js--section-about-us">
-          <div id="natalia" class="about_section layout_padding">
-             <div class="container">
-                <div class="row">
-                   <div class="col-md-5">
-                      <h3 style="text-transform: none !important">Natália Rybovičová</h3>
-                      <p class="js--wp-1">nasa krasna natalia najsumnejsie nam zaspiva</p>
-                   </div>
-                   <div class="col-md-6 offset-md-1">
-                      <div class="full text_align_center">
-                         <img class="img-responsive js--wp-1" src="imgs/natalia.jpg" alt="#" />
-                      </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-      </section>
-      <section class="about_us js--section-about-us" style="background: #1a2428">
-          <div id="jano" class="about_section layout_padding">
-             <div class="container">
-                <div class="row">
-                   <div class="col-md-5">
-                      <div class="full text_align_center">
-                         <img class="img-responsive js--wp-1" src="imgs/jano.jpg" alt="#" />
-                      </div>
-                   </div>
-                   <div class="col-md-6 offset-md-1">
-                      <h3 style="text-transform: none !important; color: #d09400;">Ján Štucka</h3>
-                      <p class="js--wp-1" style="color: #ffffff;">zijeme len raz prave tu a prave teraz slnko svieti rovnako na vsetkych znas ta idz do pici.</p>
-                   </div>
-                </div>
-             </div>
-          </div>
-      </section>
+      <?php }$even++;} ?>
        
         <footer>
          <div class="container">
@@ -221,6 +206,11 @@
         <script>
             function goto($hashtag){
             document.location = "index.php#" + $hashtag;
+            }
+       </script>
+       <script type="text/javascript">
+            function view(imgsrc) {
+                viewwin = window.open(imgsrc,'viewwin', 'width=1000%,height=1000%'); 
             }
        </script>
    </body>

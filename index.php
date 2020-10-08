@@ -1,3 +1,8 @@
+<?php
+include("connect.ini.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -5,10 +10,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>BlueSky</title>
       <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/fontawesome.min.css">
       <link rel="stylesheet" href="css/animate.css">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+      <!--<link rel="stylesheet" href="css/style.css" >-->
+      <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
+      
    </head>
    <body>
       <div id="header" class="header">
@@ -130,26 +137,26 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3 membershover js--wp-2">
-                        <a href="#" onclick="goto('dominik')">
+                        <a href="#" onclick="goto('members.html#dominik')">
                             <img class="margin_top_30 img-responsive" src="imgs/dominik.jpg" alt="Dominik Mosorjak" />
                             <h3 class="blog_head">Dominik</h3>
                             
                         </a>
                     </div>
                     <div class="col-md-3 membershover js--wp-2">
-                        <a href="#" onclick="goto('majo')">
+                        <a href="#" onclick="goto('members.html#majo')">
                             <img class="margin_top_30 img-responsive" src="imgs/majo.jpg" alt="Marián Poliščák" />
                             <h3 class="blog_head">Marián</h3>
                         </a>
                     </div>
                     <div class="col-md-3 membershover js--wp-3">
-                        <a href="#" onclick="goto('natalia')">
+                        <a href="#" onclick="goto('members.html#natalia')">
                             <img class="margin_top_30 img-responsive" src="imgs/natalia.jpg" alt="Natália Rybovičová" />
                             <h3 class="blog_head">Natália</h3>
                         </a>
                     </div>
                     <div class="col-md-3 membershover js--wp-3">
-                        <a href="#" onclick="goto('jano')">
+                        <a href="#" onclick="goto('members.html#jano')">
                             <img class="margin_top_30 img-responsive" src="imgs/jano.jpg" alt="Ján Štucka" />
                             <h3 class="blog_head">Ján</h3>
                         </a>
@@ -164,31 +171,50 @@
                 <div class="row">
                    <div class="col-md-7">
                       <h3>Foto + popis z posledných akcií (Niečo ako fotogaléria, po rozkliknutí sa otvorí veľká fotka)</h3>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                      <p>Treba niečo pri nahrávaní obrázkov na orezávanie aby boli v takej veľkosti aby ich dobre zobrazovalo.</p>
                    </div>
                    <div class="col-md-5">
                    </div>
                 </div>
+                <?php
+                    $query_zaznamy="SELECT * FROM `lastevents` ORDER BY dateOfEvent DESC";
+				    $apply_zaznamy=mysqli_query($connect,$query_zaznamy);
+                    $result_zaznamy=mysqli_fetch_array($apply_zaznamy);
+                 ?>
                 <div class="row">
-                   <div class="col-md-8 service_blog">
-                      <img class="margin_top_30 img-responsive" src="imgs/jakubany.jpg" alt="#" />
-                      <h3 class="blog_head">Jakubany</h3>
+                   <div class="col-md-8 service_blog lasteventhover">
+                    <a href="#" onclick="goto('lastEvents.php#<?php echo $result_zaznamy['id']; ?>')">
+                      <img class="margin_top_30 img-responsive" src="<?php echo $result_zaznamy['path']; ?>" alt="#" />
+                      <h3 class="blog_head"><?php echo $result_zaznamy['name']; ?></h3>
+                    </a>
                    </div>
-                   <div class="col-md-4 service_blog">
-                      <img class="margin_top_30 img-responsive" src="imgs/sacurov.jpg" alt="#" />
-                      <h3 class="blog_head">Sačurov</h3>
+                   <?php $result_zaznamy=mysqli_fetch_array($apply_zaznamy); ?>
+                   <div class="col-md-4 service_blog lasteventhover">
+                     <a href="#" onclick="goto('lastEvents.php#<?php echo $result_zaznamy['id']; ?>')">
+                      <img class="margin_top_30 img-responsive" src="<?php echo $result_zaznamy['path']; ?>" alt="#" />
+                      <h3 class="blog_head"><?php echo $result_zaznamy['name']; ?></h3>
+                     </a>
                    </div>
-                   <div class="col-md-4 service_blog">
-                      <img class="margin_top_30 img-responsive" src="imgs/palma.jpg" alt="#" />
-                      <h3 class="blog_head">Palma</h3>
+                   <?php $result_zaznamy=mysqli_fetch_array($apply_zaznamy); ?>
+                   <div class="col-md-4 service_blog lasteventhover">
+                     <a href="#" onclick="goto('lastEvents.php#<?php echo $result_zaznamy['id']; ?>')">
+                      <img class="margin_top_30 img-responsive" src="<?php echo $result_zaznamy['path']; ?>" alt="#" />
+                      <h3 class="blog_head"><?php echo $result_zaznamy['name'];?></h3>
+                     </a>
                    </div>
-                   <div class="col-md-4 service_blog">
-                      <img class="margin_top_30 img-responsive" src="imgs/familia.jpg" alt="#" />
-                      <h3 class="blog_head">Familia</h3>
+                   <?php $result_zaznamy=mysqli_fetch_array($apply_zaznamy); ?>
+                   <div class="col-md-4 service_blog lasteventhover">
+                     <a href="#" onclick="goto('lastEvents.php#<?php echo $result_zaznamy['id']; ?>')">
+                      <img class="margin_top_30 img-responsive" src="<?php echo $result_zaznamy['path']; ?>" alt="#" />
+                      <h3 class="blog_head"><?php echo $result_zaznamy['name']; ?></h3>
+                     </a>
                    </div>
-                   <div class="col-md-4 service_blog">
-                      <img class="margin_top_30 img-responsive" src="imgs/plavec.jpg" alt="#" />
-                      <h3 class="blog_head">Plaveč</h3>
+                   <?php $result_zaznamy=mysqli_fetch_array($apply_zaznamy); ?>
+                   <div class="col-md-4 service_blog lasteventhover">
+                     <a href="#" onclick="goto('lastEvents.php#<?php echo $result_zaznamy['id']; ?>')">
+                      <img class="margin_top_30 img-responsive" src="<?php echo $result_zaznamy['path']; ?>" alt="#" />
+                      <h3 class="blog_head"><?php echo $result_zaznamy['name']; ?></h3>
+                     </a>
                    </div>
                 </div>
              </div>
@@ -441,7 +467,7 @@
       </script>
         <script>
             function goto($hashtag){
-            document.location = "members.html#" + $hashtag;
+            document.location = $hashtag;
             }
         </script>
    </body>
