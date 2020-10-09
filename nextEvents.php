@@ -75,7 +75,7 @@ include("connect.ini.php");
         </div>
       </section>
       <section class="nextEvents">
-      <div id="na" class="hiw_section layout_padding" style="background: #1a2428;">
+      <div id="nextEvents" class="hiw_section layout_padding" style="background: #1a2428;">
          <div class="container">
             <div class="row">
                <div class="col-md-7">
@@ -86,69 +86,46 @@ include("connect.ini.php");
             </div>
             <div class="row">
               <?php
-                    $query_zaznamy="SELECT * FROM `nextevents` WHERE CURDATE()<=dateOfEvent ORDER BY dateOfEvent";
+                    /*$query_zaznamy="SELECT * FROM `nextevents` WHERE CURDATE()<=dateOfEvent ORDER BY dateOfEvent";
 				    $apply_zaznamy=mysqli_query($connect,$query_zaznamy);
-                    $result_zaznamy=mysqli_fetch_array($apply_zaznamy);
-                    $query_month="SELECT Month('".$result_zaznamy['dateOfEvent']."') AS month;";
+                    $result_zaznamy=mysqli_fetch_array($apply_zaznamy);*/
+                    $query_month="SELECT * FROM `nextevents` WHERE CURDATE()<=dateOfEvent GROUP BY Month(dateOfEvent) ORDER BY dateOfEvent";
+				    $apply_month=mysqli_query($connect,$query_month);
+                    /*$query_month="SELECT Month('".$result_zaznamy['dateOfEvent']."') AS month;";
 				    $apply_month=mysqli_query($connect,$query_month);
                     $result_month=mysqli_fetch_array($apply_month);
-                    print_r($result_month);
+                    print_r($result_month);*/
+                while($result_month=mysqli_fetch_array($apply_month)){
                  ?>
                <!-- Free Tier -->
-      <div class="col-lg-3">
+               <?php
+               $query_zaznamy="SELECT * FROM `nextevents` WHERE CURDATE()<=dateOfEvent AND Month(dateOfEvent)=".date('m', strtotime($result_month['dateOfEvent']))." ORDER BY dateOfEvent";
+               $apply_zaznamy=mysqli_query($connect,$query_zaznamy);
+               ?>
+      <div class="col-lg-6">
         <div class="card mb-5 mb-lg-0">
           <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center"><?php echo $result_zaznamy['place']; ?></h5>
-            <h6 class="card-price text-center"><?php echo $result_zaznamy['type']; ?></h6>
+            <h5 class="card-title text-muted text-uppercase text-center"><i class="fa fa-calendar"><?php echo date('M', strtotime($result_month['dateOfEvent']))." - ".date('Y', strtotime($result_month['dateOfEvent'])); ?></i></h5>
             <hr>
             <ul class="fa-ul">
-              <li><span class="fa-li"></span><?php echo $result_zaznamy['dateOfEvent']; ?></li>
+             <?php while($result_zaznamy=mysqli_fetch_array($apply_zaznamy)) {?>
+              <li><span class="fa-li"></span><?php echo $result_zaznamy['dateOfEvent']." - ".$result_zaznamy["place"]." (".$result_zaznamy["type"].")"; ?></li>
+              <?php } ?>
             </ul>
           </div>
         </div>
       </div>
-      <?php $result_zaznamy=mysqli_fetch_array($apply_zaznamy); ?>
-      <!-- Plus Tier -->
-      <div class="col-lg-3">
-        <div class="card mb-5 mb-lg-0">
-          <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center"><?php echo $result_zaznamy['place']; ?></h5>
-            <h6 class="card-price text-center"><?php echo $result_zaznamy['type']; ?></h6>
-            <hr>
-            <ul class="fa-ul">
-              <li><span class="fa-li"></span><?php echo $result_zaznamy['dateOfEvent']; ?></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <?php $result_zaznamy=mysqli_fetch_array($apply_zaznamy); ?>
-      <!-- Plus Tier -->
-      <div class="col-lg-3">
-        <div class="card mb-5 mb-lg-0">
-          <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center"><?php echo $result_zaznamy['place']; ?></h5>
-            <h6 class="card-price text-center"><?php echo $result_zaznamy['type']; ?></h6>
-            <hr>
-            <ul class="fa-ul">
-              <li><span class="fa-li"></span><?php echo $result_zaznamy['dateOfEvent']; ?></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-          <?php $result_zaznamy=mysqli_fetch_array($apply_zaznamy); ?>
-      <!-- Plus Tier -->
-      <div class="col-lg-3">
-        <div class="card mb-5 mb-lg-0">
-          <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center"><?php echo $result_zaznamy['place']; ?></h5>
-            <h6 class="card-price text-center"><?php echo $result_zaznamy['type']; ?></h6>
-            <hr>
-            <ul class="fa-ul">
-              <li><span class="fa-li"></span><?php echo $result_zaznamy['dateOfEvent']; ?></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <?php } ?>
             </div>
          </div>
       </div>

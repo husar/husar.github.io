@@ -226,7 +226,7 @@ include("connect.ini.php");
             <div class="row">
                <div class="col-md-7">
                   <h3 class="nextEventsh3">Najbližšie hráme</h3>
-                  <p class="white_font">Ak chceš vidieť všetky obsadené dátumy, <a href="#" onclick="goto('nextEvents.php')" style="font-weight:bold">klikaj tu</a>.</p>
+                  <p class="white_font">Ak chceš vidieť všetky obsadené dátumy, <a href="#" onclick="goto('nextEvents.php#nextEvents')" style="font-weight:bold">klikaj tu</a>.</p>
                </div>
                <div class="col-md-5">
                </div>
