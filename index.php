@@ -1,5 +1,16 @@
 <?php
 include("connect.ini.php");
+
+if(isset($_POST['rezervovat'])){
+    $to = "kapela.unix@gmail.com";
+    $subject = $_POST['typ'];
+    $message = "<b>Meno: </b>".$_POST['meno']."<br><b>Priezvisko: </b>".$_POST['priezvisko']."<br><b>Email: </b>".$_POST['mail']."<br><b>Dátum: </b>".$_POST['datum']."<br><b>Telefńne číslo: </b>".$_POST['telefon']."<br><b>Miesto konania</b>: ".$_POST['miesto']."<br><b>Ďalšie informácie: </b>".$_POST['sprava'];
+    echo '<script>alert("Ďakujeme za kontaktovanie. Odpoveď na vašu správu Vám príde na uvedený email.")</script>'; 
+    // send email
+    mail($to,$subject,$message);
+    
+    header("Refresh:0");
+}
 ?>
 
 
@@ -301,53 +312,63 @@ include("connect.ini.php");
              <div class="container">
                 <div class="row">
                    <div class="col-md-7">
-                      <h3>Ukážky dajaké 2 videjká a tlačidlo s presmerovaním na youtube kanál</h3>
-                      <p>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+                      <h3>Naša tvorba</h3>
+                      <p>Ak chceš vidieť a počuť viac z našej tvorby, sleduj nás našom <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCjnBCI_vDzFi3woAcP_fLEA/" style="font-weight:bold">youtube kanály</a>.</p>
                    </div>
                    <div class="col-md-5">
                    </div>
                 </div>
                 <div class="row">
                    <div class="col-md-6">
-                      <img class="margin_top_30 img-responsive" src="imgs/blog1.jpg" alt="#" />
-                      <h3>Book Online</h3>
+                      <iframe width="400" height="345" src="https://www.youtube.com/embed/ryslZKtI5rc">
+</iframe>
+                      <!--<h3>Book Online</h3>-->
                    </div>
                    <div class="col-md-6">
-                      <img class="margin_top_30 img-responsive" src="imgs/blog2.jpg" alt="#" />
-                      <h3>Confirmation</h3>
+                      <iframe width="400" height="345" src="https://www.youtube.com/embed/RgozHFNPs_0">
+</iframe>
+                      <!--<h3>Confirmation</h3>-->
                    </div>
                 </div>
              </div>
           </div>
       </section>
-      <div id="booking" class="hiw_section layout_padding" style="background: #eeefef;">
+      <div id="booking" class="hiw_section layout_padding booking" style="background: #1a2428;">
          <div class="container">
             <div class="row">
                <div class="col-md-7">
-                  <h3>Rezervacia na aky typ akcie kde kedy ako po odoslani rezervacky nam pride mail a komunikujeme uz len mailom</h3>
+                  <h3>Rezervuj si nás:</h3>
                </div>
                <div class="col-md-5">
                </div>
             </div>
             <div class="row">
                <div class="col-md-7">
-                  <div class="contact-form">
-                     <form>
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email" />
-                        <input type="text" placeholder="Phone Number" />
-                        <input type="text" placeholder="Type of Service">
-                        <textarea placeholder="Message"></textarea>
-                        <input type="submit" value="SEND">
+                 <div class="contact-form">
+                     <form role="form" action="" method="post" id="mail-form">
+                        <input type="text" id="meno" name="meno" placeholder="Meno" required/>
+                        <input type="text" id="priezvisko" name="priezvisko" placeholder="Priezvisko" required/>
+                        <input type="email" id="mail" name="mail" placeholder="Email" required/>
+                        <input type="text" id="typ" name="typ" placeholder="Typ akcie (svadba, oslava, stužková...)"/>
+                        <input type="date" id="datum" name="datum" placeholder="Dátum" min= "<?php
+         echo date('Y-m-d');
+     ?>"/>
+                        <input type="text" id="telefon" name="telefon" placeholder="Telefónne číslo" />
+                        <input type="text" id="miesto" name="miesto" placeholder="Miesto konania">
+                        <textarea id="sprava" name="sprava" placeholder="Správa"></textarea>
+                        <input type="submit" id="rezervovat" name="rezervovat" value="Rezervovať">
                      </form>
                   </div>
+                </div>
+                  <div class="col-md-5 text_align_center">
+                  <img class="rotate" src="imgs/logo.png" alt="#"/>
                </div>
-               <div class="col-md-5 text_align_center">
-                  <img class="img-responsive" src="imgs/man_cartoon.png" alt="#" />
+               </div>
+                <div class="col-md-6">
+                  
                </div>
             </div>
          </div>
-      </div>
       <div id="wcs" class="hiw_section layout_padding">
          <div class="container">
             <div class="row">

@@ -19,6 +19,10 @@ header {
 
 #myImg:hover {opacity: 0.7;}
 
+/*.playlist iframe{
+    height: 200%;
+    width: 100%;
+}*/
 
 section.nextEvents {
   background: #007bff;
@@ -83,6 +87,16 @@ section.nextEvents {
   }
 }
 
+.booking h3{
+    color: #d09400;
+}
+
+.rotate{
+    transform: rotate(90deg);
+    width: 150%;
+    margin-top: 150px;
+}
+
 /*.about_us {
     background-color: #cccccc;
     background: linear-gradient(to top, rgba(0,0,0,0) -5%, rgba(0,0,0,1) 140%); 
@@ -99,6 +113,9 @@ section.nextEvents {
     color: black;
     font-weight: bold;
 }*/
+.modal{
+    margin-top: 100px;
+}
 .lasteventhover{
     opacity: 0.8;
     transition: 0.7s;
@@ -335,7 +352,7 @@ p {
 
 .contact-form {
     padding: 55px 65px;
-    background: #4fcaff;
+    background: #d09400;
     min-height: 600px;
     margin-top: 60px;
 }
@@ -361,20 +378,21 @@ p {
 }
 
 .contact-form form input[type="submit"] {
-    background: #fa3e19;
+    background: #bc5c18;
     color: #fff;
     width: 190px;
     margin: 15px auto 0;
+    margin-left: 30%;
     font-size: 19px;
-    font-weight: 300;
+    font-weight: bold;    
     float: none;
-    display: flex;
+    /*display: flex;*/
     cursor: pointer;
 }
 
 .contact-form form input[type="submit"]:hover,
 .contact-form form input[type="submit"]:focus {
-    background: #111;
+    background: #8B4513;
     color: #fff;
     transition: ease all 0.5s;
 }
@@ -1187,6 +1205,19 @@ footer .item h4 {
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
+.contact-form form input[type="submit"] {
+    background: #bc5c18;
+    color: #fff;
+    width: 190px;
+    margin: 15px auto 0;
+    margin-left: 25%;
+    font-size: 19px;
+    font-weight: bold;    
+    float: none;
+    /*display: flex;*/
+    cursor: pointer;
+}
+    
 .slide_show {
     margin-top: 80px;        
 }
@@ -1353,9 +1384,22 @@ h3.blog_head {
 
 .contact-form {
     padding: 40px 50px;
-    background: #4fcaff;
+    background: #d09400;
     min-height: 600px;
     margin-top: 60px;
+}
+    
+.contact-form form input[type="submit"] {
+    background: #bc5c18;
+    color: #fff;
+    width: 190px;
+    margin: 15px auto 0;
+    margin-left: 18%;
+    font-size: 19px;
+    font-weight: bold;    
+    float: none;
+    /*display: flex;*/
+    cursor: pointer;
 }
 
 .service_blog img {
@@ -1365,6 +1409,10 @@ h3.blog_head {
 }
 
 @media (max-width: 767px) {
+
+.rotate{
+    display: none;
+}
     
 .slide_show {
     margin-top: 80px;        
@@ -1440,7 +1488,7 @@ h3.blog_head {
 
 .contact-form {
     padding: 35px 40px;
-    background: #4fcaff;
+    background: #d09400;
     min-height: 600px;
     margin-top: 20px;
 }
