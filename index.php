@@ -372,133 +372,80 @@ if(isset($_POST['rezervovat'])){
       <div id="wcs" class="hiw_section layout_padding">
          <div class="container">
             <div class="row">
-
-    <!-- Grid column -->
-    <div class="col-lg-5 mb-lg-0 mb-4" id="contact">
-
-      <!-- Form with header -->
-      <div class="card">
-        <div class="card-body">
-          <!-- Header -->
-          <div class="form-header blue accent-1">
-            <h3 class="mt-2"><i class="fas fa-envelope"></i> Kontakty mapka ku skusobni a dajak pekne to rozlozit</h3>
-          </div>
-          <p class="dark-grey-text">We'll write rarely, but only the best content.</p>
-          <!-- Body -->
-          <div class="md-form">
-            <i class="fas fa-user prefix grey-text"></i>
-            <input type="text" id="form-name" class="form-control">
-            <label for="form-name">Your name</label>
-          </div>
-          <div class="md-form">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="text" id="form-email" class="form-control">
-            <label for="form-email">Your email</label>
-          </div>
-          <div class="md-form">
-            <i class="fas fa-tag prefix grey-text"></i>
-            <input type="text" id="form-Subject" class="form-control">
-            <label for="form-Subject">Subject</label>
-          </div>
-          <div class="md-form">
-            <i class="fas fa-pencil-alt prefix grey-text"></i>
-            <textarea id="form-text" class="form-control md-textarea" rows="3"></textarea>
-            <label for="form-text">Send message</label>
-          </div>
-          <div class="text-center">
-            <button class="btn btn-light-blue">Submit</button>
-          </div>
-        </div>
-      </div>
-      <!-- Form with header -->
-
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="col-lg-7">
-
-      <!--Google map-->
-      <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 400px">
-        <iframe src="https://maps.google.com/maps?q=Manhatan&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0"
-          style="border:0" allowfullscreen></iframe>
-      </div>
-      <!-- Buttons-->
-      <div class="row text-center">
-        <div class="col-md-4">
-          <a class="btn-floating blue accent-1">
-            <i class="fas fa-map-marker-alt"></i>
-          </a>
-          <p>New York, 94126</p>
-          <p class="mb-md-0">United States</p>
-        </div>
-        <div class="col-md-4">
+            <div class="col-md-7">
+                      <h3>Kontakt</h3>
+            </div>
+       
+      <div class="row text-center" style="margin:auto;">
+       
+        <div class="col-md-3">
           <a class="btn-floating blue accent-1">
             <i class="fas fa-phone"></i>
           </a>
-          <p>+ 01 234 567 89</p>
-          <p class="mb-md-0">Mon - Fri, 8:00-22:00</p>
+          <p>0917 233 088<br>0910 145 639</p>          
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
+          <a class="btn-floating blue accent-1">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <p><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/hudobnaskupinaUNIX" style="font-weight:bold;">Hudobná skupina UNIX</a></p>
+        </div>
+        <div class="col-md-3">
           <a class="btn-floating blue accent-1">
             <i class="fas fa-envelope"></i>
           </a>
-          <p>info@gmail.com</p>
-          <p class="mb-0">sale@gmail.com</p>
+          <p>kapela.unix@gmail.com</p>
+        </div>
+        <div class="col-md-3">
+          <a class="btn-floating blue accent-1">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <p><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/hudobna_skupina_unix/?hl=sk" style="font-weight:bold;">hudobna_skupina_unix</a></p>
         </div>
       </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2602.402841484244!2d20.686894815772344!3d49.28771157933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473e12b30e17329f%3A0x5de56c14bba569b1!2zSmVkw6FsZcWIIFBBTE1B!5e0!3m2!1ssk!2ssk!4v1602525387335!5m2!1ssk!2ssk" width="600" height="250" frameborder="0" style="border:0; margin:auto;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
     </div>
     <!-- Grid column -->
 
   </div>
          </div>
-      </div>
+     
         <footer>
          <div class="container">
             <div class="row">
                <div class="col-lg-3 col-md-6 col-12">
                   <div class="footer_blog_section">
-                     <img style="height: 80px; width: 200px;" src="imgs/logo.png" alt="#"/>
-                     <p style="margin-top: 5px;">It is a long established fact that a reader will be distracted by the readable content..</p>
+                     <img class="logo" src="imgs/logo.png" alt="#"/>
                   </div>
                </div>
                <div class="col-lg-2 col-md-6 col-12">
                   <div class="item">
-                     <h4 class="text-uppercase">Navigation</h4>
+                     <h4 class="text-uppercase">Navigácia</h4>
                      <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Location</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">Features</a></li>
+                        <li><a href="#about">Kapela</a></li>
+                        <li><a href="#hiw">Členovia</a></li>
+                        <li><a href="#service">Posledné akcie</a></li>
+                        <li><a href="#na">Najbližšie akcie</a></li>
+                        <li><a href="#ukazky">Ukážky</a></li>
+                        <li><a href="#booking">Rezervácia</a></li>
+                        <li><a href="#contact">Kontakty</a></li>
                      </ul>
                   </div>
                </div>
                <div class="col-lg-4 col-md-6 col-12">
-                  <div class="item">
-                     <h4 class="text-uppercase">Contact Info</h4>
-                     <p><strong>Corporate Office Address:</strong></p>
-                     <p><img src="imgs/phone_icon.png" alt="#" /> 1234 River Street New York, NY 36524</p>
-                     <p><strong>Customer Service:</strong></p>
-                     <p><img src="imgs/location.png" alt="#" /> 987 654 3210</p>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6 col-12">
-                  <div class="item">
-                     <h4 class="text-uppercase">Discover</h4>
-                     <ul>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">How It Works</a></li>
-                        <li><a href="#">Subscribe</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                     </ul>
+                  <div class="item contact">
+                     <h4 class="text-uppercase">Kontakt</h4>
+                     <p><i class="fas fa-phone"></i>0917 233 088 / 0910 145 639</p>
+                     <p><i class="fab fa-facebook-f"></i><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/hudobnaskupinaUNIX" style="font-weight:bold;"> Hudobná skupina UNIX</a></p>
+                     <p><i class="fas fa-envelope"></i> kapela.unix@gmail.com</p>
+                     <p><i class="fab fa-instagram"></i><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/hudobna_skupina_unix/?hl=sk" style="font-weight:bold;"> hudobna_skupina_unix</a></p>
                   </div>
                </div>
             </div>
          </div>
          <div class="copyright text-center">
-            <p>Copyright 2019  Design by <a href="https://html.design">Free Html Templates</a></p>
+            <p>© Ján Štucka | Kapela Unix 2020  Design by <a href="https://html.design">Free Html Templates</a></p>
          </div>
       </footer>
       <script src="js/jquery-3.3.1.min.js"></script>
